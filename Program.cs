@@ -1,3 +1,5 @@
+using SoftwareStore.Data;
+
 namespace SoftwareStore
 {
     public class Program
@@ -8,6 +10,7 @@ namespace SoftwareStore
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddTransient<AppDbContext>();
 
             var app = builder.Build();
 
@@ -32,5 +35,6 @@ namespace SoftwareStore
 
             app.Run();
         }
+
     }
 }
