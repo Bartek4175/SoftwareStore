@@ -5,11 +5,11 @@ namespace SoftwareStore.Data.Enums
     public enum ProductCategory
     {
         [Display(Name = "Systemy operacyjne")]OperatingSystem = 1,
-        Antivirus = 2,
-        MicrosoftOffice = 3,
-        Financial = 4,
-        Graphics = 5,
-        Games = 6,
-        Voucher = 7
+        [Display(Name = "Programy antywirusowe")] Antivirus = 2,
+        [Display(Name = "Pakiet biurowy")] Office = 3,
+        [Display(Name = "Programy księgowe")] Financial = 4,
+        [Display(Name = "Programy graficzne")] Graphics = 5,
+        [Display(Name = "Gry komputerowe")] Games = 6,
+        [Display(Name = "Vouchery")] Voucher = 7
     }
 }

@@ -1,26 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using SoftwareStore.Models;
+using System.Collections.Generic;
 namespace SoftwareStore.Data
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
-        //public DbSet<Book> Books { get; set; } // dla kazdej encji
-
-        private string DbPath;
-        public AppDbContext()
-        {
-
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            DbPath = System.IO.Path.Join(path, "store.db");
-        }
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite($"Data Source={DbPath}");
-        }
-        /* dodawanie danych do bazy
+        public AppDbContext(DbContextOptions<AppDbContext> options) :
+        base(options)
+        { }
+        public DbSet<Product> Products { get; set; } // dla kazdej encji
+        public DbSet<Producer> Producers { get; set; } 
+        public DbSet<Platform> Platform { get; set; } 
+    }
+    /* dodawanie danych do bazy
          * protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Book>().HasData(
@@ -29,11 +21,10 @@ namespace SoftwareStore.Data
             );
         }
         */
-        /*
-         * dotnet tool install --global dotnet-ef
-        dotnet add package Microsoft.EntityFrameworkCore.Design
-        dotnet ef migrations add InitialCreate
-        dotnet ef database update
-        */
-    }
+    /*
+     * dotnet tool install --global dotnet-ef
+    dotnet add package Microsoft.EntityFrameworkCore.Design
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
+    */
 }

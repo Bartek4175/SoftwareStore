@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SoftwareStore.Controllers;
 using SoftwareStore.Data;
 
 namespace SoftwareStore
@@ -9,8 +12,13 @@ namespace SoftwareStore
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<AppDbContext>(
+                options => options.UseSqlServer(builder.Configuration["Data:App:ConnectionString"]));
+            //builder.Services.AddScoped<IActionResult, Product>();
+            //builder.Services.AddSingleton<IClockProvider, DefaultClock>();
+           // builder.Services.AddTransient<IProductRepository, EFProductRepository>();
+
             builder.Services.AddControllersWithViews();
-            builder.Services.AddTransient<AppDbContext>();
 
             var app = builder.Build();
 
@@ -31,7 +39,7 @@ namespace SoftwareStore
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Products}/{action=Index}/{id?}");
 
             app.Run();
         }

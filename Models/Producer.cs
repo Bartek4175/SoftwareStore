@@ -10,6 +10,6 @@ namespace SoftwareStore.Models
         public string Description { get; set; }
         public string ImageURL { get; set; }
         public DateTime FoundingDate { get; set; }
-        public string slug { get; set; }
+        public string Slug { get; set; }
     }
 }
