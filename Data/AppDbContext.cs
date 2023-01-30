@@ -1,30 +1,43 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SoftwareStore.Models;
+﻿using SoftwareStore.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace SoftwareStore.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) :
-        base(options)
-        { }
-        public DbSet<Product> Products { get; set; } // dla kazdej encji
-        public DbSet<Producer> Producers { get; set; } 
-        public DbSet<Platform> Platform { get; set; } 
-    }
-    /* dodawanie danych do bazy
-         * protected override void OnModelCreating(ModelBuilder modelBuilder)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            modelBuilder.Entity<Book>().HasData(
-           new Book() { Id = 1, Title = "AA", Author = "BB" },
-           new Book() { Id = 2, Title = "C#", Author = "BB" }
-            );
         }
-        */
-    /*
-     * dotnet tool install --global dotnet-ef
-    dotnet add package Microsoft.EntityFrameworkCore.Design
-    dotnet ef migrations add InitialCreate
-    dotnet ef database update
-    */
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Platform_Product>().HasKey(am => new
+            {
+                am.platformId,
+                am.ProductId
+            });
+
+            modelBuilder.Entity<Platform_Product>().HasOne(m => m.Product).WithMany(am => am.Platforms_Products).HasForeignKey(m => m.ProductId);
+            modelBuilder.Entity<Platform_Product>().HasOne(m => m.platform).WithMany(am => am.Platforms_Products).HasForeignKey(m => m.platformId);
+
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public DbSet<Platform> Platforms { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Platform_Product> Platforms_Products { get; set; }
+        public DbSet<Producer> Producers { get; set; }
+
+
+        //Orders related tables
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+    }
 }
