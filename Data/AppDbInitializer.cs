@@ -109,54 +109,8 @@ namespace SoftwareStore.Data
                             Description = "This is the Life Product description",
                             Price = 39.50,
                             ImageURL = "http://dotnethow.net/images/Products/Product-3.jpeg",
-                            StartDate = DateTime.Now.AddDays(-10),
-                            EndDate = DateTime.Now.AddDays(10),
                             ProducerId = 3,
-                            ProductCategory = ProductCategory.Documentary
-                        },
-                        new Product()
-                        {
-                            Name = "The Shawshank Redemption",
-                            Description = "This is the Shawshank Redemption description",
-                            Price = 29.50,
-                            ImageURL = "http://dotnethow.net/images/Products/Product-1.jpeg",
-                            StartDate = DateTime.Now,
-                            EndDate = DateTime.Now.AddDays(3),
-                            ProducerId = 1,
-                            ProductCategory = ProductCategory.Action
-                        },
-                        new Product()
-                        {
-                            Name = "Ghost",
-                            Description = "This is the Ghost Product description",
-                            Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/Products/Product-4.jpeg",
-                            StartDate = DateTime.Now,
-                            EndDate = DateTime.Now.AddDays(7),
-                            ProducerId = 4,
-                            ProductCategory = ProductCategory.Horror
-                        },
-                        new Product()
-                        {
-                            Name = "Race",
-                            Description = "This is the Race Product description",
-                            Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/Products/Product-6.jpeg",
-                            StartDate = DateTime.Now.AddDays(-10),
-                            EndDate = DateTime.Now.AddDays(-5),
-                            ProducerId = 2,
-                            ProductCategory = ProductCategory.Documentary
-                        },
-                        new Product()
-                        {
-                            Name = "Scoob",
-                            Description = "This is the Scoob Product description",
-                            Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/Products/Product-7.jpeg",
-                            StartDate = DateTime.Now.AddDays(-10),
-                            EndDate = DateTime.Now.AddDays(-2),
-                            ProducerId = 3,
-                            ProductCategory = ProductCategory.Cartoon
+                            ProductCategory = ProductCategory.Antivirus
                         },
                         new Product()
                         {
@@ -164,10 +118,8 @@ namespace SoftwareStore.Data
                             Description = "This is the Cold Soles Product description",
                             Price = 39.50,
                             ImageURL = "http://dotnethow.net/images/Products/Product-8.jpeg",
-                            StartDate = DateTime.Now.AddDays(3),
-                            EndDate = DateTime.Now.AddDays(20),
                             ProducerId = 5,
-                            ProductCategory = ProductCategory.Drama
+                            ProductCategory = ProductCategory.OperatingSystem
                         }
                     });
                     context.SaveChanges();

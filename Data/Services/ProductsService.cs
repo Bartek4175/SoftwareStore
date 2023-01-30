@@ -34,12 +34,12 @@ namespace SoftwareStore.Data.Services
             //Add Product Platforms
             foreach (var platformId in data.platformIds)
             {
-                var newplatformProduct = new Platform_Product()
+                var newPlatformProduct = new Platform_Product()
                 {
                     ProductId = newProduct.Id,
                     platformId = platformId
                 };
-                await _context.Platforms_Products.AddAsync(newplatformProduct);
+                await _context.Platforms_Products.AddAsync(newPlatformProduct);
             }
             await _context.SaveChangesAsync();
         }
@@ -86,12 +86,12 @@ namespace SoftwareStore.Data.Services
             await _context.SaveChangesAsync();
 
             //Add Product Platforms
-            foreach (var platformId in data.PlatformId)
+            foreach (var platformId in data.platformIds)
             {
-                var newplatformProduct = new Platform_Product()
+                var newPlatformProduct = new Platform_Product()
                 {
                     ProductId = data.Id,
-                    PlatformId = platformId
+                    platformId = platformId
                 };
                 await _context.Platforms_Products.AddAsync(newPlatformProduct);
             }

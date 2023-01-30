@@ -26,16 +26,16 @@ namespace SoftwareStore.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            //var allProducts = await _service.GetAllAsync(n => n.Cinema);
-            var allProducts = await _service.GetAllAsync(n => n.Platform);
+            //var allProducts = await _service.GetAllAsync(n => n.Platform);
+            var allProducts = await _service.GetAllAsync();
             return View(allProducts);
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
-            //var allProducts = await _service.GetAllAsync(n => n.Cinema);
-            var allProducts = await _service.GetAllAsync(n => n.Platform);
+            //var allProducts = await _service.GetAllAsync(n => n.Platform);
+            var allProducts = await _service.GetAllAsync();
 
             if (!string.IsNullOrEmpty(searchString))
             {
