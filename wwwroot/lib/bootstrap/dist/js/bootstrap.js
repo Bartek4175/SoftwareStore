@@ -3,10 +3,10 @@
   * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
-(function (global, fplatformy) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = fplatformy(require('@popperjs/core')) :
-  typeof define === 'function' && define.amd ? define(['@popperjs/core'], fplatformy) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bootstrap = fplatformy(global.Popper));
+(function (global, fPlatformy) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = fPlatformy(require('@popperjs/core')) :
+  typeof define === 'function' && define.amd ? define(['@popperjs/core'], fPlatformy) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bootstrap = fPlatformy(global.Popper));
 }(this, (function (Popper) { 'use strict';
 
   function _interopNamespace(e) {

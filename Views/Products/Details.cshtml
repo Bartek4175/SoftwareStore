@@ -34,12 +34,12 @@
                             <b>Platformy: </b>
                             <hr />
                             <div class="row">
-                                @foreach (var platform in Model.Platforms_Products)
+                                @foreach (var Platform in Model.Platforms_Products)
                                 {
                                     <div class="column text-center">
-                                        <img class="border-info rounded-circle" src="@platform.platform.ProfilePictureURL" style="max-width: 150px" />
+                                        <img class="border-info rounded-circle" src="@Platform.Platform.ProfilePictureURL" style="max-width: 150px" />
                                         <br />
-                                        <a asp-controller="Platforms" asp-action="Details" asp-route-id="@platform.platformId">@platform.platform.FullName</a>
+                                        <a asp-controller="Platforms" asp-action="Details" asp-route-id="@Platform.PlatformId">@Platform.Platform.FullName</a>
                                     </div>
                                 }
                             </div>

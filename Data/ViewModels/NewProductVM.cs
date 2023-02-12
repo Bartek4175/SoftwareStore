@@ -28,9 +28,9 @@ namespace SoftwareStore.Models
         [Required(ErrorMessage = "Wybór kategorii jest wymagany")]
         public ProductCategory ProductCategory { get; set; }
 
-        [Display(Name = "Wybierz platformę")]
-        [Required(ErrorMessage = "Wybór platformy jest wymagany")]
-        public List<int> platformIds { get; set; }
+        [Display(Name = "Wybierz Platformę")]
+        [Required(ErrorMessage = "Wybór Platformy jest wymagany")]
+        public List<int> PlatformIds { get; set; }
 
         [Display(Name = "Wybierz producenta")]
         [Required(ErrorMessage = "Wybór producenta jest wymagany")]

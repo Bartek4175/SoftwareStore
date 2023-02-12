@@ -3,10 +3,10 @@
   * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
-(function (global, fplatformy) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? fplatformy(exports, require('jquery')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'jquery'], fplatformy) :
-  (global = global || self, fplatformy(global.bootstrap = {}, global.jQuery));
+(function (global, fPlatformy) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? fPlatformy(exports, require('jquery')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'jquery'], fPlatformy) :
+  (global = global || self, fPlatformy(global.bootstrap = {}, global.jQuery));
 }(this, function (exports, $) { 'use strict';
 
   $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
@@ -3969,7 +3969,7 @@
         _this.options.modifiers[name] = _extends({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
       });
 
-      // Refplatforming modifiers' list (Object => Array)
+      // RefPlatforming modifiers' list (Object => Array)
       this.modifiers = Object.keys(this.options.modifiers).map(function (name) {
         return _extends({
           name: name
@@ -5009,7 +5009,7 @@
       }
     } // ----------------------------------------------------------------------
     // the following methods are used to handle overflowing modals
-    // todo (fat): these should probably be refplatformed out of modal.js
+    // todo (fat): these should probably be refPlatformed out of modal.js
     // ----------------------------------------------------------------------
     ;
 

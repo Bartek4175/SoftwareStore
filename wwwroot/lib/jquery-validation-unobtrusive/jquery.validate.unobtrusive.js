@@ -6,16 +6,16 @@
 /*jslint white: true, browser: true, onevar: true, undef: true, nomen: true, eqeqeq: true, plusplus: true, bitwise: true, regexp: true, newcap: true, immed: true, strict: false */
 /*global document: false, jQuery: false */
 
-(function (fplatformy) {
+(function (fPlatformy) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define("jquery.validate.unobtrusive", ['jquery-validation'], fplatformy);
+        define("jquery.validate.unobtrusive", ['jquery-validation'], fPlatformy);
     } else if (typeof module === 'object' && module.exports) {
         // CommonJS-like environments that support module.exports     
-        module.exports = fplatformy(require('jquery-validation'));
+        module.exports = fPlatformy(require('jquery-validation'));
     } else {
         // Browser global
-        jQuery.validator.unobtrusive = fplatformy(jQuery);
+        jQuery.validator.unobtrusive = fPlatformy(jQuery);
     }
 }(function ($) {
     var $jQval = $.validator,

@@ -27,34 +27,16 @@ namespace SoftwareStore.Data
                     {
                         new Platform()
                         {
-                            FullName = "platform 1",
-                            Bio = "This is the Bio of the first platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/Platforms/platform-1.jpeg"
+                            FullName = "Platform 1",
+                            Bio = "This is the Bio of the first Platform",
+                            ProfilePictureURL = "http://dotnethow.net/images/Platforms/Platform-1.jpeg"
 
                         },
                         new Platform()
                         {
-                            FullName = "platform 2",
-                            Bio = "This is the Bio of the second platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/Platforms/platform-2.jpeg"
-                        },
-                        new Platform()
-                        {
-                            FullName = "platform 3",
-                            Bio = "This is the Bio of the second platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/Platforms/platform-3.jpeg"
-                        },
-                        new Platform()
-                        {
-                            FullName = "platform 4",
-                            Bio = "This is the Bio of the second platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/Platforms/platform-4.jpeg"
-                        },
-                        new Platform()
-                        {
-                            FullName = "platform 5",
-                            Bio = "This is the Bio of the second platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/Platforms/platform-5.jpeg"
+                            FullName = "Platform 2",
+                            Bio = "This is the Bio of the second Platform",
+                            ProfilePictureURL = "http://dotnethow.net/images/Platforms/Platform-2.jpeg"
                         }
                     });
                     context.SaveChanges();
@@ -67,33 +49,15 @@ namespace SoftwareStore.Data
                         new Producer()
                         {
                             FullName = "Producer 1",
-                            Bio = "This is the Bio of the first platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-1.jpeg"
+                            Bio = "This is the Bio of the first Platform",
+                            ProfilePictureURL = "https://dotnethow.net/images/producers/producer-1.jpeg"
 
                         },
                         new Producer()
                         {
                             FullName = "Producer 2",
-                            Bio = "This is the Bio of the second platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-2.jpeg"
-                        },
-                        new Producer()
-                        {
-                            FullName = "Producer 3",
-                            Bio = "This is the Bio of the second platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-3.jpeg"
-                        },
-                        new Producer()
-                        {
-                            FullName = "Producer 4",
-                            Bio = "This is the Bio of the second platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-4.jpeg"
-                        },
-                        new Producer()
-                        {
-                            FullName = "Producer 5",
-                            Bio = "This is the Bio of the second platform",
-                            ProfilePictureURL = "http://dotnethow.net/images/producers/producer-5.jpeg"
+                            Bio = "This is the Bio of the second Platform",
+                            ProfilePictureURL = "https://dotnethow.net/images/producers/producer-2.jpeg"
                         }
                     });
                     context.SaveChanges();
@@ -108,8 +72,8 @@ namespace SoftwareStore.Data
                             Name = "Life",
                             Description = "This is the Life Product description",
                             Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/Products/Product-3.jpeg",
-                            ProducerId = 3,
+                            ImageURL = "https://dotnethow.net/images/Products/Product-3.jpeg",
+                            ProducerId = 1,
                             ProductCategory = ProductCategory.Antivirus
                         },
                         new Product()
@@ -117,8 +81,8 @@ namespace SoftwareStore.Data
                             Name = "Cold Soles",
                             Description = "This is the Cold Soles Product description",
                             Price = 39.50,
-                            ImageURL = "http://dotnethow.net/images/Products/Product-8.jpeg",
-                            ProducerId = 5,
+                            ImageURL = "https://dotnethow.net/images/Products/Product-8.jpeg",
+                            ProducerId = 2,
                             ProductCategory = ProductCategory.OperatingSystem
                         }
                     });
@@ -131,97 +95,14 @@ namespace SoftwareStore.Data
                     {
                         new Platform_Product()
                         {
-                            platformId = 1,
+                            PlatformId = 1,
                             ProductId = 1
                         },
                         new Platform_Product()
                         {
-                            platformId = 3,
-                            ProductId = 1
-                        },
-
-                         new Platform_Product()
-                        {
-                            platformId = 1,
+                            PlatformId = 1,
                             ProductId = 2
-                        },
-                         new Platform_Product()
-                        {
-                            platformId = 4,
-                            ProductId = 2
-                        },
-
-                        new Platform_Product()
-                        {
-                            platformId = 1,
-                            ProductId = 3
-                        },
-                        new Platform_Product()
-                        {
-                            platformId = 2,
-                            ProductId = 3
-                        },
-                        new Platform_Product()
-                        {
-                            platformId = 5,
-                            ProductId = 3
-                        },
-
-
-                        new Platform_Product()
-                        {
-                            platformId = 2,
-                            ProductId = 4
-                        },
-                        new Platform_Product()
-                        {
-                            platformId = 3,
-                            ProductId = 4
-                        },
-                        new Platform_Product()
-                        {
-                            platformId = 4,
-                            ProductId = 4
-                        },
-
-
-                        new Platform_Product()
-                        {
-                            platformId = 2,
-                            ProductId = 5
-                        },
-                        new Platform_Product()
-                        {
-                            platformId = 3,
-                            ProductId = 5
-                        },
-                        new Platform_Product()
-                        {
-                            platformId = 4,
-                            ProductId = 5
-                        },
-                        new Platform_Product()
-                        {
-                            platformId = 5,
-                            ProductId = 5
-                        },
-
-
-                        new Platform_Product()
-                        {
-                            platformId = 3,
-                            ProductId = 6
-                        },
-                        new Platform_Product()
-                        {
-                            platformId = 4,
-                            ProductId = 6
-                        },
-                        new Platform_Product()
-                        {
-                            platformId = 5,
-                            ProductId = 6
-                        },
+                        }
                     });
                     context.SaveChanges();
                 }

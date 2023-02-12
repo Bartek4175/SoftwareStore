@@ -32,12 +32,12 @@ namespace SoftwareStore.Data.Services
             await _context.SaveChangesAsync();
 
             //Add Product Platforms
-            foreach (var platformId in data.platformIds)
+            foreach (var PlatformId in data.PlatformIds)
             {
                 var newPlatformProduct = new Platform_Product()
                 {
                     ProductId = newProduct.Id,
-                    platformId = platformId
+                    PlatformId = PlatformId
                 };
                 await _context.Platforms_Products.AddAsync(newPlatformProduct);
             }
@@ -48,7 +48,7 @@ namespace SoftwareStore.Data.Services
         {
             var ProductDetails = await _context.Products
                 .Include(p => p.Producer)
-                .Include(am => am.Platforms_Products).ThenInclude(a => a.platform)
+                .Include(am => am.Platforms_Products).ThenInclude(a => a.Platform)
                 .FirstOrDefaultAsync(n => n.Id == id);
 
             return ProductDetails;
@@ -86,12 +86,12 @@ namespace SoftwareStore.Data.Services
             await _context.SaveChangesAsync();
 
             //Add Product Platforms
-            foreach (var platformId in data.platformIds)
+            foreach (var PlatformId in data.PlatformIds)
             {
                 var newPlatformProduct = new Platform_Product()
                 {
                     ProductId = data.Id,
-                    platformId = platformId
+                    PlatformId = PlatformId
                 };
                 await _context.Platforms_Products.AddAsync(newPlatformProduct);
             }

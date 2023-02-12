@@ -23,9 +23,9 @@ namespace SoftwareStore.Models
         //Relationships
         public List<Platform_Product> Platforms_Products { get; set; }
 
-        public int PlatformId { get; set; }
+       /* public int PlatformId { get; set; }
         [ForeignKey("PlatformId")]
-        public Platform Platform { get; set; }
+        public Platform Platform { get; set; }*/
 
         //Producer
         public int ProducerId { get; set; }

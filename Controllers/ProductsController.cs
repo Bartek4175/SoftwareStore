@@ -26,16 +26,16 @@ namespace SoftwareStore.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-            //var allProducts = await _service.GetAllAsync(n => n.Platform);
-            var allProducts = await _service.GetAllAsync();
+            var allProducts = await _service.GetAllAsync(n => n.Platforms_Products);
+            //var allProducts = await _service.GetAllAsync();
             return View(allProducts);
         }
 
         [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
-            //var allProducts = await _service.GetAllAsync(n => n.Platform);
-            var allProducts = await _service.GetAllAsync();
+            var allProducts = await _service.GetAllAsync(n => n.Platforms_Products);
+            //var allProducts = await _service.GetAllAsync();
 
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -101,7 +101,7 @@ namespace SoftwareStore.Controllers
                 ImageURL = ProductDetails.ImageURL,
                 ProductCategory = ProductDetails.ProductCategory,
                 ProducerId = ProductDetails.ProducerId,
-                platformIds = ProductDetails.Platforms_Products.Select(n => n.platformId).ToList(),
+                PlatformIds = ProductDetails.Platforms_Products.Select(n => n.PlatformId).ToList(),
             };
 
             var ProductDropdownsData = await _service.GetNewProductDropdownsValues();

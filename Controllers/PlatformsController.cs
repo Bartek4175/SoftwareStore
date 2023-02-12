@@ -35,13 +35,13 @@ namespace SoftwareStore.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Platform platform)
+        public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Platform Platform)
         {
             if (!ModelState.IsValid)
             {
-                return View(platform);
+                return View(Platform);
             }
-            await _service.AddAsync(platform);
+            await _service.AddAsync(Platform);
             return RedirectToAction(nameof(Index));
         }
 
@@ -49,44 +49,44 @@ namespace SoftwareStore.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
-            var platformDetails = await _service.GetByIdAsync(id);
+            var PlatformDetails = await _service.GetByIdAsync(id);
 
-            if (platformDetails == null) return View("NotFound");
-            return View(platformDetails);
+            if (PlatformDetails == null) return View("NotFound");
+            return View(PlatformDetails);
         }
 
         //Get: Platforms/Edit/1
         public async Task<IActionResult> Edit(int id)
         {
-            var platformDetails = await _service.GetByIdAsync(id);
-            if (platformDetails == null) return View("NotFound");
-            return View(platformDetails);
+            var PlatformDetails = await _service.GetByIdAsync(id);
+            if (PlatformDetails == null) return View("NotFound");
+            return View(PlatformDetails);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,ProfilePictureURL,Bio")] Platform platform)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,ProfilePictureURL,Bio")] Platform Platform)
         {
             if (!ModelState.IsValid)
             {
-                return View(platform);
+                return View(Platform);
             }
-            await _service.UpdateAsync(id, platform);
+            await _service.UpdateAsync(id, Platform);
             return RedirectToAction(nameof(Index));
         }
 
         //Get: Platforms/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
-            var platformDetails = await _service.GetByIdAsync(id);
-            if (platformDetails == null) return View("NotFound");
-            return View(platformDetails);
+            var PlatformDetails = await _service.GetByIdAsync(id);
+            if (PlatformDetails == null) return View("NotFound");
+            return View(PlatformDetails);
         }
 
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var platformDetails = await _service.GetByIdAsync(id);
-            if (platformDetails == null) return View("NotFound");
+            var PlatformDetails = await _service.GetByIdAsync(id);
+            if (PlatformDetails == null) return View("NotFound");
 
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));

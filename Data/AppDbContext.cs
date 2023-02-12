@@ -18,12 +18,12 @@ namespace SoftwareStore.Data
         {
             modelBuilder.Entity<Platform_Product>().HasKey(am => new
             {
-                am.platformId,
+                am.PlatformId,
                 am.ProductId
             });
 
             modelBuilder.Entity<Platform_Product>().HasOne(m => m.Product).WithMany(am => am.Platforms_Products).HasForeignKey(m => m.ProductId);
-            modelBuilder.Entity<Platform_Product>().HasOne(m => m.platform).WithMany(am => am.Platforms_Products).HasForeignKey(m => m.platformId);
+            modelBuilder.Entity<Platform_Product>().HasOne(m => m.Platform).WithMany(am => am.Platforms_Products).HasForeignKey(m => m.PlatformId);
 
 
             base.OnModelCreating(modelBuilder);

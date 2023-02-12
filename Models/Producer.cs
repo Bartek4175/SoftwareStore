@@ -26,6 +26,6 @@ namespace SoftwareStore.Models
         public string Bio { get; set; }
 
         //Relationships
-        public List<Product> Products { get; set; }
+        //public List<Product> Products { get; set; }
     }
 }

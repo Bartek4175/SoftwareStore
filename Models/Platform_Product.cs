@@ -10,7 +10,7 @@ namespace SoftwareStore.Models
         public int ProductId { get; set; }
         public Product Product { get; set; }
 
-        public int platformId { get; set; }
-        public Platform platform { get; set; }
+        public int PlatformId { get; set; }
+        public Platform Platform { get; set; }
     }
 }

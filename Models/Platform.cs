@@ -25,7 +25,6 @@ namespace SoftwareStore.Models
         [Required(ErrorMessage = "Opis jest wymagany")]
         public string Bio { get; set; }
 
-        //Relationships
         public List<Platform_Product> Platforms_Products { get; set; }
     }
 }
