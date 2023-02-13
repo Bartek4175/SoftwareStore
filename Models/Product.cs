@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace SoftwareStore.Models
@@ -20,16 +21,12 @@ namespace SoftwareStore.Models
         public string ImageURL { get; set; }
         public ProductCategory ProductCategory { get; set; }
 
-        //Relationships
         public List<Platform_Product> Platforms_Products { get; set; }
 
-       /* public int PlatformId { get; set; }
-        [ForeignKey("PlatformId")]
-        public Platform Platform { get; set; }*/
-
-        //Producer
         public int ProducerId { get; set; }
         [ForeignKey("ProducerId")]
         public Producer Producer { get; set; }
+
     }
+
 }

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Product>
+﻿@using SoftwareStore.Data.Enums;
+@model IEnumerable<Product>
 
 @{
     ViewData["Title"] = "Lista produktów";
@@ -29,7 +30,7 @@
                     <div class="col-md-6">
                         <div class="card-body">
                             <p class="card-text">@item.Description</p>
-                            <p class="card-text"><b>Kategoria: </b>@item.ProductCategory</p>
+                            <p class="card-text"><b>Kategoria: </b>@item.ProductCategory.GetDisplayName()</p>
                         </div>
                     </div>
                     <div class="col-md-12">

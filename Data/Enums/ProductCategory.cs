@@ -12,4 +12,5 @@ namespace SoftwareStore.Data
         [Display(Name = "Gry komputerowe")] Games = 6,
         [Display(Name = "Vouchery")] Voucher = 7
     }
+
 }
