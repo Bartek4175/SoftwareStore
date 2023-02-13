@@ -82,7 +82,7 @@ namespace SoftwareStore.Data.Services
             await _context.SaveChangesAsync();
 
             //Dodawanie produktów do platofrm
-            foreach (var PlatformId in data.PlatformIds)
+            foreach (var PlatformId in data.PlatformIds) 
             {
                 var newPlatformProduct = new Platform_Product()
                 {
