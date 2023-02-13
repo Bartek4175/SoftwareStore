@@ -50,6 +50,11 @@ namespace SoftwareStore.Data.Base
             return await query.FirstOrDefaultAsync(n => n.Id == id);
         }
 
+        public void PlatformsControllerTest()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task UpdateAsync(int id, T entity)
         {
             EntityEntry entityEntry =  _context.Entry<T>(entity);
