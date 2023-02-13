@@ -2,10 +2,6 @@
 using SoftwareStore.Data.ViewModels;
 using SoftwareStore.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SoftwareStore.Data.Services
 {
@@ -31,7 +27,7 @@ namespace SoftwareStore.Data.Services
             await _context.Products.AddAsync(newProduct);
             await _context.SaveChangesAsync();
 
-            //Add Product Platforms
+            //Dodawanie
             foreach (var PlatformId in data.PlatformIds)
             {
                 var newPlatformProduct = new Platform_Product()
@@ -80,12 +76,12 @@ namespace SoftwareStore.Data.Services
                 await _context.SaveChangesAsync();
             }
 
-            //Remove existing Platforms
+            //Usuwanie produktów z platform
             var existingPlatformsDb = _context.Platforms_Products.Where(n => n.ProductId == data.Id).ToList();
             _context.Platforms_Products.RemoveRange(existingPlatformsDb);
             await _context.SaveChangesAsync();
 
-            //Add Product Platforms
+            //Dodawanie produktów do platofrm
             foreach (var PlatformId in data.PlatformIds)
             {
                 var newPlatformProduct = new Platform_Product()

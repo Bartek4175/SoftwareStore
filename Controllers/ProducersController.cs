@@ -1,14 +1,8 @@
-﻿using SoftwareStore.Data;
-using SoftwareStore.Data.Services;
+﻿using SoftwareStore.Data.Services;
 using SoftwareStore.Data.Static;
 using SoftwareStore.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SoftwareStore.Controllers
 {

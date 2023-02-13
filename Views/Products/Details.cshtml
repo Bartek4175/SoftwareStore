@@ -1,4 +1,5 @@
-﻿@model Product
+﻿@using SoftwareStore.Data.Enums;
+@model Product
 
 @{
     ViewData["Title"] = "Szczegóły produktu";
@@ -29,7 +30,7 @@
                                 @Model.Producer.FullName
                             </a>
                         </p>
-                        <p class="card-text"><b>Category: </b>@Model.ProductCategory</p>
+                        <p class="card-text"><b>Kategoria: </b>@Model.ProductCategory.GetDisplayName()</p>
                         <p class="card-text">
                             <b>Platformy: </b>
                             <hr />

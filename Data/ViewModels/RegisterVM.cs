@@ -25,5 +25,6 @@ namespace SoftwareStore.Data.ViewModels
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Hasła nie pasują do siebie")]
         public string ConfirmPassword { get; set; }
+        //public string UserName { get; internal set; }
     }
 }

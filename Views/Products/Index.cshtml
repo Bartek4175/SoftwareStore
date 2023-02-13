@@ -1,6 +1,5 @@
 ﻿@using SoftwareStore.Data.Enums;
 @model IEnumerable<Product>
-
 @{
     ViewData["Title"] = "Lista produktów";
 }
@@ -25,11 +24,14 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="@item.ImageURL" width="100%" alt="@item.Name">
+                        <img src="@item.ImageURL" width="250px" height="250px" alt="@item.Name">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <p class="card-text">@item.Description</p>
+                            <p class="card-text"> @{
+string parameterValue = item.Description.ToString().Substring(0, 120); 
+          }
+          @Html.DisplayFor(modelItem=>parameterValue)...</p>
                             <p class="card-text"><b>Kategoria: </b>@item.ProductCategory.GetDisplayName()</p>
                         </div>
                     </div>

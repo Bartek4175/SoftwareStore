@@ -30,7 +30,6 @@ namespace SoftwareStore
             builder.Services.AddScoped<IProducersService, ProducersService>();
             builder.Services.AddScoped<IProductsService, ProductsService>();
             builder.Services.AddScoped<IOrdersService, OrdersService>();
-
             builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
 

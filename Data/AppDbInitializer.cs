@@ -20,7 +20,7 @@ namespace SoftwareStore.Data
 
                 context.Database.EnsureCreated();
 
-                //Platforms
+                //Platformy
                 if (!context.Platforms.Any())
                 {
                     context.Platforms.AddRange(new List<Platform>()
@@ -77,7 +77,7 @@ namespace SoftwareStore.Data
                     });
                     context.SaveChanges();
                 }
-                //Producers
+                //Producenci
                 if (!context.Producers.Any())
                 {
                     context.Producers.AddRange(new List<Producer>()
@@ -134,7 +134,7 @@ namespace SoftwareStore.Data
                     });
                     context.SaveChanges();
                 }
-                //Products
+                //Produkty
                 if (!context.Products.Any())
                 {
                     context.Products.AddRange(new List<Product>()
@@ -232,7 +232,7 @@ namespace SoftwareStore.Data
                     });
                     context.SaveChanges();
                 }
-                //Platforms & Products
+                //Platformy i produkty
                 if (!context.Platforms_Products.Any())
                 {
                     context.Platforms_Products.AddRange(new List<Platform_Product>()
@@ -286,6 +286,11 @@ namespace SoftwareStore.Data
                         {
                             PlatformId = 2,
                             ProductId = 10
+                        },
+                        new Platform_Product()
+                        {
+                            PlatformId = 2,
+                            ProductId = 7
                         }
                     });
                     context.SaveChanges();
@@ -299,7 +304,7 @@ namespace SoftwareStore.Data
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
             {
 
-                //Roles
+                //Role
                 var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
                 if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
@@ -307,12 +312,12 @@ namespace SoftwareStore.Data
                 if (!await roleManager.RoleExistsAsync(UserRoles.User))
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
 
-                //Users
+                //Użytkownicy
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
                 string adminUserEmail = "admin@SoftwareStore.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
-                if(adminUser == null)
+                if (adminUser == null)
                 {
                     var newAdminUser = new ApplicationUser()
                     {
