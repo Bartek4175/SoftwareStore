@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Szox\\source\\repos\\SoftwareStoreTest\\SoftwareStoreTest.csproj": {}
+    "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStoreTest\\SoftwareStoreTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Szox\\source\\repos\\SoftwareStoreTest\\SoftwareStoreTest.csproj": {
+    "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStoreTest\\SoftwareStoreTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Szox\\source\\repos\\SoftwareStoreTest\\SoftwareStoreTest.csproj",
+        "projectUniqueName": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStoreTest\\SoftwareStoreTest.csproj",
         "projectName": "SoftwareStoreTest",
-        "projectPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStoreTest\\SoftwareStoreTest.csproj",
+        "projectPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStoreTest\\SoftwareStoreTest.csproj",
         "packagesPath": "C:\\Users\\Szox\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStoreTest\\obj\\",
+        "outputPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStoreTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Szox\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore.csproj": {
-                "projectPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore.csproj"
+              "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj": {
+                "projectPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj"
               }
             }
           }
@@ -85,14 +85,14 @@
         }
       }
     },
-    "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore.csproj": {
+    "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore.csproj",
+        "projectUniqueName": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj",
         "projectName": "SoftwareStore",
-        "projectPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore.csproj",
+        "projectPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj",
         "packagesPath": "C:\\Users\\Szox\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\obj\\",
+        "outputPath": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Szox\\AppData\\Roaming\\NuGet\\NuGet.Config",

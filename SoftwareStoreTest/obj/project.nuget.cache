@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xw6exyJmUGXfIHxWJSMsYIDPmia1WUSU6BFMrwvnIqeCcCpkp0mILOypvh6Q8ArDaOMJXszY35nAWqpLS5HvDA==",
+  "dgSpecHash": "eEMKmJ58phjX8aD6ImB4MAAdhW0T2RM9mB5v1i81iAtFdYtMAWguOk8CF0gPtkG9P4VcKg6rTgGuiJVb6JAYPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Szox\\source\\repos\\SoftwareStoreTest\\SoftwareStoreTest.csproj",
+  "projectFilePath": "C:\\Users\\Szox\\source\\repos\\SoftwareStore\\SoftwareStoreTest\\SoftwareStoreTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Szox\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Szox\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
