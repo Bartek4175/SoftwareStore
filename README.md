@@ -4,7 +4,7 @@ Projekt zaliczeniowy z przedmiotu Programowanie w środowisku ASP.NET. Aplikacja
 
 ## Instalacja
 
-1. Należy sklonować repozytorium przy użyciu linku: [https://github.com/Bartek4175/SoftwareStore](https://github.com/Bartek4175/SoftwareStore).\
+1. Należy sklonować repozytorium przy użyciu linku: [https://github.com/Bartek4175/SoftwareStore](https://github.com/Bartek4175/SoftwareStore).
 2. Po poprawnym sklonowaniu należy edytować dane do bazy danych. Ustawienia dostępne są w folderze SoftwareStore w pliku appsettings.json. Edytować należy nazwę serwera bazy danych, która zlokalizowana jest w 11 linii:
     ```json
     "ConnectionString": "DATA SOURCE=DESKTOP-LVMKQE4;Integrated Security=true;DATABASE=SoftwareStore;TrustServerCertificate=True;"
@@ -20,7 +20,7 @@ Projekt zaliczeniowy z przedmiotu Programowanie w środowisku ASP.NET. Aplikacja
 4. Po poprawnej edycji i migracji wystarczy włączyć debugowanie programu.
 
 ## Użytkownicy
-Program tworzy użytkownika z uprawnieniami administratora oraz standardowego użytkownika.\
+Program domyślnie tworzy użytkownika z uprawnieniami administratora oraz standardowego użytkownika.\
 Dane do konta z dostępem administratora:
  - login: **admin@SoftwareStore.com**
  - hasło: **Coding@1234?**

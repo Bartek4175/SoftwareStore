@@ -15,12 +15,13 @@ namespace SoftwareStoreTest
         public PlatformsServiceTest()
         {
             Platforms = new Dictionary<int, Platform>();
-            Platforms.Add(1, new Platform() { Id = 1, ProfilePictureURL = "pic1.png", FullName = "Origin", Bio = "Testowy opis 1" });
-            Platforms.Add(2, new Platform() { Id = 2, ProfilePictureURL = "pic2.png", FullName = "Steam", Bio = "Testowy opis 2" });
-            Platforms.Add(3, new Platform() { Id = 3, ProfilePictureURL = "pic3.png", FullName = "Allegro", Bio = "Testowy opis 3" });
-            Platforms.Add(4, new Platform() { Id = 4, ProfilePictureURL = "pic4.png", FullName = "Windows", Bio = "Testowy opis 4" });
+            
         }
-       
+        private int counter = 1;
+        private int UniqId()
+        {
+            return counter++;
+        }
         public bool DeleteAsync(int? id) => (id is null) ? false : Platforms.Remove((int)id);
 
         public IEnumerable<Platform?> GetAllAsync()
@@ -65,9 +66,10 @@ namespace SoftwareStoreTest
             throw new NotImplementedException();
         }
 
-        public Task DeleteAsync(int id)
+        public bool DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            if (id == null) return false;
+            return Platforms.Remove(id ?? 1);
         }
     }
 }
