@@ -380,3 +380,5 @@ C:\Users\Szox\source\repos\SoftwareStore\SoftwareStoreTest\obj\Debug\net6.0\refi
 C:\Users\Szox\source\repos\SoftwareStore\SoftwareStoreTest\obj\Debug\net6.0\SoftwareStoreTest.pdb
 C:\Users\Szox\source\repos\SoftwareStore\SoftwareStoreTest\obj\Debug\net6.0\SoftwareStoreTest.genruntimeconfig.cache
 C:\Users\Szox\source\repos\SoftwareStore\SoftwareStoreTest\obj\Debug\net6.0\ref\SoftwareStoreTest.dll
+C:\Users\Szox\source\repos\SoftwareStore\SoftwareStoreTest\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\Szox\source\repos\SoftwareStore\SoftwareStoreTest\bin\Debug\net6.0\Moq.dll

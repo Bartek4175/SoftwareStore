@@ -1,69 +1,87 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using SoftwareStore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Moq;
 using SoftwareStore.Controllers;
-using SoftwareStore.Data.Base;
 using SoftwareStore.Data.Services;
 using SoftwareStore.Models;
-using System.Linq.Expressions;
-using Platform = SoftwareStore.Models.Platform;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Xunit;
 
 namespace SoftwareStoreTest
 {
     public class PlatformsControllerTest
     {
-        private readonly PlatformsController controller;
-        private readonly IPlatformsService service;
-
+        private readonly PlatformsController _controller;
+        private readonly Mock<IPlatformsService> _serviceMock;
         public PlatformsControllerTest()
         {
-            service = new PlatformsServiceTest();
-            controller = new PlatformsController(service);
-            service.Save(new Platform { Id = 1, ProfilePictureURL = "url1.png", FullName = "Windows", Bio = "Testowy opis 1"});
-            service.Save(new Platform { Id = 1, ProfilePictureURL = "url2.png", FullName = "Steam", Bio = "Testowy opis 2" });
-            service.Save(new Platform { Id = 1, ProfilePictureURL = "url3.png", FullName = "Allegro", Bio = "Testowy opis 3" });
-            service.Save(new Platform { Id = 1, ProfilePictureURL = "url4.png", FullName = "Origin", Bio = "Testowy opis 4" });
-
+            _serviceMock = new Mock<IPlatformsService>();
+            _controller = new PlatformsController(_serviceMock.Object);
         }
 
-        [Xunit.Theory]
-        [InlineData(1)]
-        [InlineData(2)]
-        [InlineData(3)]
-        [InlineData(4)]
-        public void TestPlatformsControllerGet(int id)
-        {
-            Platform createdPlatform = new Platform() { Id = 1, ProfilePictureURL = "url.png", FullName = "Windows", Bio = "Testowy opis 1" };
-            var task = controller.GetPlatform(id);
-            ActionResult<Platform> actionResult = Assert.IsType<ActionResult<Platform>>(task);
-            Platform @Platform = Assert.IsType<Platform>(actionResult.Value);
-            Assert.Equal(@Platform.Id, service.FindBy(@Platform.Id).Id);
-        }
         [Fact]
-        public void TestPlatformsControllerDelete()
+        public async Task Index_ReturnsAViewResult_WithAListOfPlatforms()
         {
-            Platform createdPlatform = new Platform() { Id = 1, ProfilePictureURL = "url.png", FullName = "Windows", Bio = "Testowy opis 1" };
-            var task = controller.DeletePlatform(1);
-            NoContentResult noContentResult = Assert.IsType<NoContentResult>(task);
-            var @Platform = service.FindBy(1);
-            Assert.Null(@Platform);
+            // Arrange
+            var testPlatforms = GetTestPlatforms();
+            _serviceMock.Setup(repo => repo.GetAllAsync()).ReturnsAsync(testPlatforms);
+
+            // Act
+            var result = await _controller.Index();
+
+            // Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var model = Assert.IsAssignableFrom<IEnumerable<Platform>>(viewResult.ViewData.Model);
+            Assert.Equal(testPlatforms.Count(), model.Count());
         }
-        [Fact]
-        public void TestPlatformsControllerGetAll()
+
+        private List<Platform> GetTestPlatforms()
         {
-            var task = controller.GetPlatforms();
-            var result = Assert.IsType<ActionResult<IEnumerable<Platform>>>(task);
-            var Platforms = Assert.IsAssignableFrom<IEnumerable<Platform>>(result.Value);
-            Assert.Equal(4, Platforms.Count());
+            var platforms = new List<Platform>();
+            platforms.Add(new Platform { Id = 1, FullName = "Windows" });
+            platforms.Add(new Platform { Id = 2, FullName = "Steam" });
+            platforms.Add(new Platform { Id = 3, FullName = "Origin" });
+            return platforms;
         }
+
         [Fact]
-        public void TestPlatformsControllerPost()
+        public async Task Create_RedirectsToIndexAction_WhenModelStateIsValid()
         {
-            Platform createdPlatform = new Platform() { Id = 1, ProfilePictureURL = "url.png", FullName = "Windows", Bio = "Testowy opis 1" };
-            var task = controller.PostPlatform(createdPlatform);
-            Assert.NotNull(service.FindBy(createdPlatform.Id));
+            var newPlatform = new Platform { FullName = "Testowa Platforma" };
+
+            var result = await _controller.Create(newPlatform);
+
+            var redirectToActionResult = Assert.IsType<RedirectToActionResult>(result);
+            Assert.Equal("Index", redirectToActionResult.ActionName);
+        }
+
+        [Fact]
+        public async Task Details_ReturnsNotFoundResult_WhenPlatformIsNull()
+        {
+            int testPlatformId = 1;
+            _serviceMock.Setup(repo => repo.GetByIdAsync(testPlatformId))
+                .ReturnsAsync((Platform)null);
+
+            var result = await _controller.Details(testPlatformId);
+
+            Assert.IsType<ViewResult>(result);
+        }
+
+        [Fact]
+        public async Task Details_ReturnsViewResult_WhenPlatformIsNotNull()
+        {
+            // Arrange
+            int testPlatformId = 1;
+            var testPlatform = new Platform { Id = testPlatformId, FullName = "Testowa Platforma" };
+            _serviceMock.Setup(repo => repo.GetByIdAsync(testPlatformId))
+                .ReturnsAsync(testPlatform);
+
+            var result = await _controller.Details(testPlatformId);
+
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var model = Assert.IsType<Platform>(viewResult.ViewData.Model);
+            Assert.Equal(testPlatform, model);
         }
     }
-
 }
