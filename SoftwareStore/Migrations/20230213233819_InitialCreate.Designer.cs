@@ -12,7 +12,7 @@ using SoftwareStore.Data;
 namespace SoftwareStore.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230213020309_InitialCreate")]
+    [Migration("20230213233819_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
